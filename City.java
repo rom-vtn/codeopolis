@@ -78,14 +78,14 @@ public class City {
         if (this.bushelCount < bushelCount || bushelCount < 0) {return false;}
         this.bushelCount -= bushelCount;
         this.currentBushelSpendingOnFood = bushelCount;
-        // todo: adjust city population 
+        // TODO: adjust city population 
         return true;
     }
 
     public boolean plant(int acreCount) {
         if (acreCount < 0 || this.acreCount < acreCount || this.bushelCount < acreCount || this.population * 10 < acreCount) {return false;}
         this.bushelCount -= acreCount;
-        // todo add to current bushelCount?
+        // TODO add to current bushelCount?
         return true;
     }
 
