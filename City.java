@@ -90,7 +90,7 @@ public class City {
     }
 
     public String toString() {
-        String s = "In the year "+age+" after its foundation, the city of "+name+" and its "+population+" inhabitants reign over "+acreCount+" acres of land and own "+bushelCount+" bushels of grain.";
+        String s = "In the year "+age+" following its foundation, the city of "+name+" and its "+population+" inhabitants reign over "+acreCount+" acres of land and own "+bushelCount+" bushels of grain.";
         return s;
     }
 
