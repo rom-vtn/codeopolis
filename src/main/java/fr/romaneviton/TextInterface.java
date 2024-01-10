@@ -12,7 +12,7 @@ public class TextInterface {
         scanner.close();
     }
 
-    public int mainMenu() {
+    public MenuOptions.MainMenu mainMenu() {
         int choice;
 
         while (true) {
@@ -24,16 +24,16 @@ public class TextInterface {
             choice = scanner.nextInt();
             switch (choice) {
                 case 1:
-                    return 1;
+                    return MenuOptions.MainMenu.NEWGAME;
                 case 2:
-                    return 2;
+                    return MenuOptions.MainMenu.QUIT;
                 default:
                     System.out.println("Your choice is invalid. Please enter a valid option.");
             }
         }
     }
 
-    public int gameMenu() {
+    public MenuOptions.GameMenu gameMenu() {
         int gameChoice;
 
         while (true) {
@@ -59,7 +59,7 @@ public class TextInterface {
                 case 5:
                     break;
                 case 6:
-                    return 6;
+                    return MenuOptions.GameMenu.QUIT;
                 default:
                     System.out.println("Your choice is invalid. Please enter a valid option.");
             }

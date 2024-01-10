@@ -2,9 +2,14 @@ package fr.romaneviton;
 
 public class Codeopolis {
     public static void main(String[] args) {
-        City city = new City(null);
+        int ACRE_PRICE = 40; //TODO: make prices variable later
         TextInterface textInterface = new TextInterface();
 
-        int acrePrice = 40; //TODO: make prices variable later
+        while (textInterface.mainMenu() == MenuOptions.MainMenu.QUIT) {
+
+        }
+        
+
+        textInterface.close(); //close the scanner inside
     }
 }
