@@ -61,20 +61,44 @@ public class TextInterface {
             gameChoice = scanner.nextInt();
             switch (gameChoice) {
                 case 1:
-                    break;
+                    return GameMenuOptions.BUY;
                 case 2:
-                    break;
+                    return GameMenuOptions.SELL;
                 case 3:
-                    break;
+                    return GameMenuOptions.FEED;
                 case 4:
-                    break;
+                    return GameMenuOptions.PLANT;
                 case 5:
-                    break;
+                    return GameMenuOptions.SHOW_STATUS;
                 case 6:
                     return GameMenuOptions.QUIT;
                 default:
                     System.out.println("Your choice is invalid. Please enter a valid option.");
             }
+        }
+    }
+
+    public int buyMenu(City city, int acrePrice) {
+        System.out.println(" --- BUY MENU --- ");
+        System.out.println("Current state : " + city.toString());
+        System.out.println("Current price per acre : " + acrePrice);
+        System.out.println("How many acres to buy?");
+
+        while (true) {
+            System.out.print(">");
+            return scanner.nextInt();
+        }
+    }
+
+    public int sellMenu(City city, int acrePrice) {
+        System.out.println(" --- SELL MENU --- ");
+        System.out.println("Current state : " + city.toString());
+        System.out.println("Current price per acre : " + acrePrice);
+        System.out.println("How many acres to sell?");
+
+        while (true) {
+            System.out.print(">");
+            return scanner.nextInt();
         }
     }
 }
