@@ -2,11 +2,18 @@ package fr.romaneviton;
 import java.util.Scanner;
 
 public class TextInterface {
-    public static void main(String[] args) {
+    private Scanner scanner;
 
-        Scanner scanner = new Scanner(System.in);
+    public TextInterface() {
+        scanner = new Scanner(System.in);
+    }
+
+    public void close() {
+        scanner.close();
+    }
+
+    public int mainMenu() {
         int choice;
-        boolean endMenu;
 
         while (true) {
             System.out.println("===== MAIN MENU =====");
@@ -15,27 +22,19 @@ public class TextInterface {
             System.out.print("Please select an option: ");
 
             choice = scanner.nextInt();
-            endMenu = false;
             switch (choice) {
                 case 1:
-                    gameMenu(scanner);
-                    break;
+                    return 1;
                 case 2:
-                    endMenu = true;
-                    break;
+                    return 2;
                 default:
                     System.out.println("Your choice is invalid. Please enter a valid option.");
             }
-            if (endMenu) {
-                break;
-            }
         }
-        scanner.close();
     }
 
-    public static void gameMenu(java.util.Scanner scanner) {
+    public int gameMenu() {
         int gameChoice;
-        boolean endMenu;
 
         while (true) {
             System.out.println("===== GAME MENU =====");
@@ -48,7 +47,6 @@ public class TextInterface {
             System.out.print("Please select an action: ");
 
             gameChoice = scanner.nextInt();
-            endMenu = false;
             switch (gameChoice) {
                 case 1:
                     break;
@@ -61,13 +59,9 @@ public class TextInterface {
                 case 5:
                     break;
                 case 6:
-                    endMenu = true;
-                    break;
+                    return 6;
                 default:
                     System.out.println("Your choice is invalid. Please enter a valid option.");
-            }
-            if (endMenu) {
-                break;
             }
         }
     }
