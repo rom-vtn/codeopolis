@@ -5,18 +5,20 @@ public class Menu {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        
+        int choice;
+        boolean endMenu;
+
         while (true) {
             System.out.println("===== MAIN MENU =====");
             System.out.println("1. NEW GAME");
             System.out.println("2. QUIT");
             System.out.print("Please select an option: ");
 
-            int choice = scanner.nextInt();
-            boolean endMenu = false;
+            choice = scanner.nextInt();
+            endMenu = false;
             switch (choice) {
                 case 1:
-                    gameMenu();
+                    gameMenu(scanner);
                     break;
                 case 2:
                     endMenu = true;
@@ -31,8 +33,9 @@ public class Menu {
         scanner.close();
     }
 
-    public static void gameMenu() {
-        Scanner scanner = new Scanner(System.in);
+    public static void gameMenu(java.util.Scanner scanner) {
+        int gameChoice;
+        boolean endMenu;
 
         while (true) {
             System.out.println("===== GAME MENU =====");
@@ -44,8 +47,8 @@ public class Menu {
             System.out.println("6. QUIT GAME");
             System.out.print("Please select an action: ");
 
-            int gameChoice = scanner.nextInt();
-            boolean endMenu = false;
+            gameChoice = scanner.nextInt();
+            endMenu = false;
             switch (gameChoice) {
                 case 1:
                     break;
@@ -67,7 +70,6 @@ public class Menu {
                 break;
             }
         }
-        scanner.close();
     }
 }
 
