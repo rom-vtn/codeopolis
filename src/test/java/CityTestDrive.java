@@ -1,6 +1,4 @@
-package fr.romaneviton.codeopolis;
-
-import City
+import fr.romaneviton.*;
 
 public class CityTestDrive {
     public static void main(String[] args) {

@@ -1,11 +1,11 @@
+package fr.romaneviton;
 import java.util.Scanner;
 
-public class menu {
+public class Menu {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
-
+        
         while (true) {
             System.out.println("===== MAIN MENU =====");
             System.out.println("1. NEW GAME");
@@ -13,18 +13,22 @@ public class menu {
             System.out.print("Please select an option: ");
 
             int choice = scanner.nextInt();
-
+            boolean endMenu = false;
             switch (choice) {
                 case 1:
                     gameMenu();
-
                     break;
                 case 2:
+                    endMenu = true;
                     break;
                 default:
                     System.out.println("Your choice is invalid. Please enter a valid option.");
             }
+            if (endMenu) {
+                break;
+            }
         }
+        scanner.close();
     }
 
     public static void gameMenu() {
@@ -41,7 +45,7 @@ public class menu {
             System.out.print("Please select an action: ");
 
             int gameChoice = scanner.nextInt();
-
+            boolean endMenu = false;
             switch (gameChoice) {
                 case 1:
                     break;
@@ -54,11 +58,16 @@ public class menu {
                 case 5:
                     break;
                 case 6:
+                    endMenu = true;
                     break;
                 default:
                     System.out.println("Your choice is invalid. Please enter a valid option.");
             }
+            if (endMenu) {
+                break;
+            }
         }
+        scanner.close();
     }
 }
 

@@ -1,4 +1,4 @@
-package src.main.java.fr.romaneviton;
+package fr.romaneviton;
 public class City {
     private String name;
     private int bushelCount;
