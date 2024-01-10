@@ -1,6 +1,6 @@
-package src.test.java;
+package fr.romaneviton.codeopolis;
 
-import src.main.java.fr.romaneviton.City;
+import City
 
 public class CityTestDrive {
     public static void main(String[] args) {
