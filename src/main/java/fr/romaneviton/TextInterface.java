@@ -12,7 +12,11 @@ public class TextInterface {
         scanner.close();
     }
 
-    public MenuOptions.MainMenu mainMenu() {
+    public enum MainMenuOptions {
+        NEWGAME,
+        QUIT
+    }
+    public MainMenuOptions mainMenu() {
         int choice;
 
         while (true) {
@@ -24,16 +28,24 @@ public class TextInterface {
             choice = scanner.nextInt();
             switch (choice) {
                 case 1:
-                    return MenuOptions.MainMenu.NEWGAME;
+                    return MainMenuOptions.NEWGAME;
                 case 2:
-                    return MenuOptions.MainMenu.QUIT;
+                    return MainMenuOptions.QUIT;
                 default:
                     System.out.println("Your choice is invalid. Please enter a valid option.");
             }
         }
     }
 
-    public MenuOptions.GameMenu gameMenu() {
+    public enum GameMenuOptions {
+        BUY,
+        SELL,
+        FEED,
+        PLANT,
+        SHOW_STATUS,
+        QUIT
+    }
+    public GameMenuOptions gameMenu() {
         int gameChoice;
 
         while (true) {
@@ -59,7 +71,7 @@ public class TextInterface {
                 case 5:
                     break;
                 case 6:
-                    return MenuOptions.GameMenu.QUIT;
+                    return GameMenuOptions.QUIT;
                 default:
                     System.out.println("Your choice is invalid. Please enter a valid option.");
             }
