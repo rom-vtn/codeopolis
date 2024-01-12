@@ -12,6 +12,14 @@ public class TextInterface {
         scanner.close();
     }
 
+    public String askCityName() {
+        String cityName = "";
+        while (cityName.equals("")) {
+            cityName = scanner.nextLine();
+        }
+        return cityName;
+    }
+
     public enum MainMenuOptions {
         NEWGAME,
         QUIT
@@ -78,7 +86,8 @@ public class TextInterface {
         }
     }
 
-    public int buyMenu(City city, int acrePrice) {
+    public void buyMenu(City city, int acrePrice) {
+        int userInput = 0;
         System.out.println(" --- BUY MENU --- ");
         System.out.println("Current state : " + city.toString());
         System.out.println("Current price per acre : " + acrePrice);
@@ -86,11 +95,19 @@ public class TextInterface {
 
         while (true) {
             System.out.print(">");
-            return scanner.nextInt();
+            userInput = scanner.nextInt();
+            if (city.buy(userInput, acrePrice)) {
+                break;
+            } else {
+                System.out.println("Not enough to buy!");
+            }
         }
+
+        System.out.println("New status: " + city.toString());
     }
 
-    public int sellMenu(City city, int acrePrice) {
+    public void sellMenu(City city, int acrePrice) {
+        int userInput = 0;
         System.out.println(" --- SELL MENU --- ");
         System.out.println("Current state : " + city.toString());
         System.out.println("Current price per acre : " + acrePrice);
@@ -98,8 +115,55 @@ public class TextInterface {
 
         while (true) {
             System.out.print(">");
-            return scanner.nextInt();
+            userInput = scanner.nextInt();
+            if (city.sell(userInput, acrePrice)) {
+                break;
+            } else {
+                System.out.println("Not enough land to sell!");
+            }
         }
+
+        System.out.println("New status: " + city.toString());
+    }
+
+    public void feedMenu(City city) {
+        int userInput = 0;
+        System.out.println(" --- FEED MENU --- ");
+        System.out.println("Current state : " + city.toString());
+        System.out.println("How many bushels to feed?");
+
+        while (true) {
+            System.out.print(">");
+            userInput = scanner.nextInt();
+            if (city.feed(userInput)) {
+                break;
+            } else {
+                System.out.println("Not enough bushels to feed!");
+            }
+        }
+
+        System.out.println("New status: " + city.toString());
+    }
+
+    public void plantMenu(City city) {
+        int userInput = 0;
+        System.out.println(" --- PLANT MENU --- ");
+        System.out.println("Current state : " + city.toString());
+        System.out.println("How many acres to plant?");
+
+        while (true) {
+            System.out.print(">");
+            userInput = scanner.nextInt();
+            if (city.plant(userInput)) {
+                break;
+            } else {
+                System.out.println("Requirements not satisfied!");
+            }
+        }
+    }
+
+    public void showStatus(City city) {
+        System.out.println("Current state: " + city.toString());
     }
 }
 
