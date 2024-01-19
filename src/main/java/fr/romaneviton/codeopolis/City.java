@@ -128,7 +128,7 @@ public class City {
         int ateByRats = (int) Math.round(random.nextDouble(0, ((float)gameConfig.getRateInfestation()/100)) * initialBushelCount);
         bushelCount -= ateByRats;
 
-        //step1 add to year
+        //step5 add to year
         age++;
 
         TurnResult tr = new TurnResult(name, age, newResidents, bushelsHarvested, population, bushelCount, starvedCount, acreCount, ateByRats, starvedPercentage);
