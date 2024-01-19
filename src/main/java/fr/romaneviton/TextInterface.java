@@ -90,7 +90,7 @@ public class TextInterface {
 
     public void buyMenu(City city, int acrePrice) {
         int userInput = 0;
-        System.out.println(" --- BUY MENU --- ");
+        System.out.println("===== BUY MENU =====");
         System.out.println("Current state : " + city.toString());
         System.out.println("Current price per acre : " + acrePrice);
         System.out.println("How many acres to buy?");
@@ -110,7 +110,7 @@ public class TextInterface {
 
     public void sellMenu(City city, int acrePrice) {
         int userInput = 0;
-        System.out.println(" --- SELL MENU --- ");
+        System.out.println("===== SELL MENU =====");
         System.out.println("Current state : " + city.toString());
         System.out.println("Current price per acre : " + acrePrice);
         System.out.println("How many acres to sell?");
@@ -130,7 +130,7 @@ public class TextInterface {
 
     public void feedMenu(City city) {
         int userInput = 0;
-        System.out.println(" --- FEED MENU --- ");
+        System.out.println("===== FEED MENU =====");
         System.out.println("Current state : " + city.toString());
         System.out.println("How many bushels to feed?");
 
@@ -149,7 +149,7 @@ public class TextInterface {
 
     public void plantMenu(City city) {
         int userInput = 0;
-        System.out.println(" --- PLANT MENU --- ");
+        System.out.println("===== PLANT MENU =====");
         System.out.println("Current state : " + city.toString());
         System.out.println("How many acres to plant?");
 
