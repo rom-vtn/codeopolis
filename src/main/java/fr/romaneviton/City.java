@@ -79,16 +79,19 @@ public class City {
     public boolean feed(int bushelCount) {
         if (this.bushelCount < bushelCount || bushelCount < 0) {return false;}
         this.bushelCount -= bushelCount;
-        this.currentBushelSpendingOnFood = bushelCount;
-        // TODO: adjust city population 
+        currentBushelSpendingOnFood = bushelCount;
         return true;
     }
 
     public boolean plant(int acreCount) {
         if (acreCount < 0 || this.acreCount < acreCount || this.bushelCount < acreCount || this.population * 10 < acreCount) {return false;}
         this.bushelCount -= acreCount;
-        // TODO add to current bushelCount?
+        currentUsedAcreCount = acreCount; 
         return true;
+    }
+
+    public boolean runTurn() {
+        return true; //TODO implement next year stuff
     }
 
     public String toString() {
