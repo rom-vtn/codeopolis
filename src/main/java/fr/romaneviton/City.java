@@ -92,8 +92,8 @@ public class City {
         return true;
     }
 
-    public boolean runTurn() {
-        return true; //TODO implement next year stuff
+    public TurnResult runTurn() {
+        return null; //TODO implement next year stuff
     }
 
     public String toString() {
