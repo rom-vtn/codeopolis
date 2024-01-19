@@ -2,7 +2,7 @@ import fr.romaneviton.codeopolis.*;
 
 public class CityTestDrive {
     public static void main(String[] args) {
-        City c = new City("Saarbrücken 2");
+        City c = new City("Saarbrücken 2,", new GameConfig(DifficultyLevel.EASY));
         System.out.println(c);
 
         //Test getters and default values

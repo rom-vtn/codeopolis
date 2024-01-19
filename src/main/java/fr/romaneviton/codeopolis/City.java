@@ -13,9 +13,7 @@ public class City {
     private int currentUsedAcreCount;
     private int age;
     private Random random;
-    public static final int BUSHELS_PER_RESIDENT = 20;
-    public static final int HARVEST_FACTOR = 6;
-    public static final double MAX_RAT_EAT = 0.25;
+    private GameConfig gameConfig;
 
     public String getName() {
         return name;
@@ -103,10 +101,10 @@ public class City {
         int initialBushelCount = bushelCount;
 
         //step1 Do hunger stuff
-        int bushelDeficit = (BUSHELS_PER_RESIDENT * population) - currentBushelSpendingOnFood;
+        int bushelDeficit = (gameConfig.getBushelsPerResident() * population) - currentBushelSpendingOnFood;
         int starvedCount, starvedPercentage;
         if (bushelDeficit > 0) {
-            starvedCount = Math.round(bushelDeficit / BUSHELS_PER_RESIDENT);
+            starvedCount = Math.round(bushelDeficit / gameConfig.getBushelsPerResident());
             starvedPercentage = Math.round(starvedCount * 100 / population);
         } else {
             starvedCount = 0;
@@ -122,12 +120,12 @@ public class City {
         }
 
         //step3 harvest
-        double harvestRate = random.nextDouble(0.1, 1) * HARVEST_FACTOR;
+        double harvestRate = random.nextDouble(0.1, 1) * gameConfig.getHarvestFactor();
         int bushelsHarvested = (int) Math.round(harvestRate * currentUsedAcreCount);
         bushelCount += bushelsHarvested;
 
         //step4 rat stuff
-        int ateByRats = (int) Math.round(random.nextDouble(0, MAX_RAT_EAT) * initialBushelCount);
+        int ateByRats = (int) Math.round(random.nextDouble(0, ((float)gameConfig.getRateInfestation()/100)) * initialBushelCount);
         bushelCount -= ateByRats;
 
         //step1 add to year
@@ -142,13 +140,13 @@ public class City {
         return s;
     }
 
-    public City(String name) {
+    public City(String name, GameConfig gameConfig) {
         setName(name);
         setBushelCount(2800);
         setAcreCount(1000);
         setPopulation(100);
         
-
+        this.gameConfig = gameConfig;
         random = new Random();
         age = 0;
         currentBushelSpendingOnFood = 0;

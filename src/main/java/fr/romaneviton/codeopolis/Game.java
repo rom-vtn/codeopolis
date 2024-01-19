@@ -1,22 +1,24 @@
 package fr.romaneviton.codeopolis;
 
+import java.util.Random;
+
 import dev.codeopolis.increment03.TurnResult;
 
 public class Game {
-    public static final int ACRE_PRICE = 40;
     private TextInterface parent;
     private City city;
+    private GameConfig gameConfig;
+    private Random random;
 
     private void runGame() {
-        int ACRE_PRICE = 40; //TODO: make prices variable later
         TurnResult turnResult;
         boolean gameWon = false;
-        city = new City(parent.askCityName("What's that name of your city? "));
         while (true) { //TODO: add quit condition or death condition
             // do interface stuff
+            int acrePrice = random.nextInt(gameConfig.getMaxAcrePrice()-gameConfig.getMinAcrePrice()) + gameConfig.getMinAcrePrice();
             parent.showStatus(city);
-            parent.buyMenu(city, ACRE_PRICE);
-            parent.sellMenu(city, ACRE_PRICE);
+            parent.buyMenu(city, acrePrice);
+            parent.sellMenu(city, acrePrice);
             parent.feedMenu(city);
             parent.plantMenu(city);
 
@@ -43,6 +45,9 @@ public class Game {
 
     public Game(TextInterface parent) {
         this.parent = parent;
+        city = new City(parent.askCityName("What's that name of your city? "), gameConfig);
+        gameConfig = new GameConfig(DifficultyLevel.EASY);
+        random = new Random();
         runGame();
     }
 }
