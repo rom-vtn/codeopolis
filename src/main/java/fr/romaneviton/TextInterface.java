@@ -96,7 +96,7 @@ public class TextInterface {
         System.out.println("How many acres to buy?");
 
         while (true) {
-            System.out.print(">");
+            System.out.print("> ");
             userInput = scanner.nextInt();
             if (city.buy(userInput, acrePrice)) {
                 break;
@@ -116,7 +116,7 @@ public class TextInterface {
         System.out.println("How many acres to sell?");
 
         while (true) {
-            System.out.print(">");
+            System.out.print("> ");
             userInput = scanner.nextInt();
             if (city.sell(userInput, acrePrice)) {
                 break;
@@ -135,7 +135,7 @@ public class TextInterface {
         System.out.println("How many bushels to feed?");
 
         while (true) {
-            System.out.print(">");
+            System.out.print("> ");
             userInput = scanner.nextInt();
             if (city.feed(userInput)) {
                 break;
@@ -154,7 +154,7 @@ public class TextInterface {
         System.out.println("How many acres to plant?");
 
         while (true) {
-            System.out.print(">");
+            System.out.print("> ");
             userInput = scanner.nextInt();
             if (city.plant(userInput)) {
                 break;
