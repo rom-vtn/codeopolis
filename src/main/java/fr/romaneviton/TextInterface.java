@@ -16,7 +16,7 @@ public class TextInterface {
         String cityName = "";
         System.out.println(prompt);
         while (cityName.equals("")) {
-            System.out.print(">");
+            System.out.print("> ");
             cityName = scanner.nextLine();
         }
         return cityName;
