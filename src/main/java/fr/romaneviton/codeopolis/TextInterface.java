@@ -1,4 +1,4 @@
-package fr.romaneviton;
+package fr.romaneviton.codeopolis;
 import java.util.Scanner;
 
 public class TextInterface {

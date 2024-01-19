@@ -1,4 +1,4 @@
-package fr.romaneviton;
+package fr.romaneviton.codeopolis;
 
 public class Codeopolis {
     public static void main(String[] args) {

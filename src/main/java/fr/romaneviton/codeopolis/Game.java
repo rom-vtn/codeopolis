@@ -1,4 +1,4 @@
-package fr.romaneviton;
+package fr.romaneviton.codeopolis;
 
 import dev.codeopolis.increment03.TurnResult;
 
