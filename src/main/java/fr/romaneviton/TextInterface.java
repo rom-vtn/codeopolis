@@ -90,13 +90,13 @@ public class TextInterface {
 
     public void buyMenu(City city, int acrePrice) {
         int userInput = 0;
-        System.out.println(" --- BUY MENU --- ");
+        System.out.println("===== BUY MENU =====");
         System.out.println("Current state : " + city.toString());
         System.out.println("Current price per acre : " + acrePrice);
         System.out.println("How many acres to buy?");
 
         while (true) {
-            System.out.print(">");
+            System.out.print("> ");
             userInput = scanner.nextInt();
             if (city.buy(userInput, acrePrice)) {
                 break;
@@ -110,13 +110,13 @@ public class TextInterface {
 
     public void sellMenu(City city, int acrePrice) {
         int userInput = 0;
-        System.out.println(" --- SELL MENU --- ");
+        System.out.println("===== SELL MENU =====");
         System.out.println("Current state : " + city.toString());
         System.out.println("Current price per acre : " + acrePrice);
         System.out.println("How many acres to sell?");
 
         while (true) {
-            System.out.print(">");
+            System.out.print("> ");
             userInput = scanner.nextInt();
             if (city.sell(userInput, acrePrice)) {
                 break;
@@ -130,12 +130,12 @@ public class TextInterface {
 
     public void feedMenu(City city) {
         int userInput = 0;
-        System.out.println(" --- FEED MENU --- ");
+        System.out.println("===== FEED MENU =====");
         System.out.println("Current state : " + city.toString());
         System.out.println("How many bushels to feed?");
 
         while (true) {
-            System.out.print(">");
+            System.out.print("> ");
             userInput = scanner.nextInt();
             if (city.feed(userInput)) {
                 break;
@@ -149,12 +149,12 @@ public class TextInterface {
 
     public void plantMenu(City city) {
         int userInput = 0;
-        System.out.println(" --- PLANT MENU --- ");
+        System.out.println("===== PLANT MENU =====");
         System.out.println("Current state : " + city.toString());
         System.out.println("How many acres to plant?");
 
         while (true) {
-            System.out.print(">");
+            System.out.print("> ");
             userInput = scanner.nextInt();
             if (city.plant(userInput)) {
                 break;
