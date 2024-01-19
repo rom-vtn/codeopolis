@@ -22,6 +22,30 @@ public class TextInterface {
         return cityName;
     }
 
+    public DifficultyLevel askDifficultyLevel() {
+        int choice;
+
+        while (true) {
+            System.out.println("===== DIFFICULTY LEVEL =====");
+            System.out.println("1. EASY");
+            System.out.println("2. MEDIUM");
+            System.out.println("3. HARD");
+            System.out.print("Please select an option: ");
+
+            choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    return DifficultyLevel.EASY;
+                case 2:
+                    return DifficultyLevel.MEDIUM;
+                case 3:
+                    return DifficultyLevel.HARD;
+                default:
+                    System.out.println("Your choice is invalid. Please enter a valid option.");
+            }
+        }
+    }
+
     public enum MainMenuOptions {
         NEWGAME,
         QUIT

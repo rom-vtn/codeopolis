@@ -13,7 +13,7 @@ public class Game {
     private void runGame() {
         TurnResult turnResult;
         boolean gameWon = false;
-        while (true) { //TODO: add quit condition or death condition
+        while (true) {
             // do interface stuff
             int acrePrice = random.nextInt(gameConfig.getMaxAcrePrice()-gameConfig.getMinAcrePrice()) + gameConfig.getMinAcrePrice();
             parent.showStatus(city);
@@ -45,8 +45,8 @@ public class Game {
 
     public Game(TextInterface parent) {
         this.parent = parent;
+        gameConfig = new GameConfig(parent.askDifficultyLevel());
         city = new City(parent.askCityName("What's that name of your city? "), gameConfig);
-        gameConfig = new GameConfig(DifficultyLevel.EASY);
         random = new Random();
         runGame();
     }
