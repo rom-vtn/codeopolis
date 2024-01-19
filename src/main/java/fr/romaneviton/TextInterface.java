@@ -12,9 +12,11 @@ public class TextInterface {
         scanner.close();
     }
 
-    public String askCityName() {
+    public String askCityName(String prompt) {
         String cityName = "";
+        System.out.println(prompt);
         while (cityName.equals("")) {
+            System.out.print(">");
             cityName = scanner.nextLine();
         }
         return cityName;
