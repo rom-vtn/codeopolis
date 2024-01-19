@@ -1,5 +1,7 @@
 package fr.romaneviton;
 
+import java.util.Random;
+
 import dev.codeopolis.increment03.TurnResult;
 
 public class City {
@@ -10,6 +12,10 @@ public class City {
     private int currentBushelSpendingOnFood;
     private int currentUsedAcreCount;
     private int age;
+    private Random random;
+    public static final int BUSHELS_PER_RESIDENT = 20;
+    public static final int HARVEST_FACTOR = 6;
+    public static final double MAX_RAT_EAT = 0.25;
 
     public String getName() {
         return name;
@@ -93,7 +99,43 @@ public class City {
     }
 
     public TurnResult runTurn() {
-        return null; //TODO implement next year stuff
+        int initialPopulation = population;
+        int initialBushelCount = bushelCount;
+
+        //step1 Do hunger stuff
+        int bushelDeficit = (BUSHELS_PER_RESIDENT * population) - currentBushelSpendingOnFood;
+        int starvedCount, starvedPercentage;
+        if (bushelDeficit > 0) {
+            starvedCount = Math.round(bushelDeficit / BUSHELS_PER_RESIDENT);
+            starvedPercentage = Math.round(starvedCount * 100 / population);
+        } else {
+            starvedCount = 0;
+            starvedPercentage = 0;
+        }
+        population -= starvedCount;
+        
+        //step2 Do new inhabitants stuff
+        int newResidents = 0;
+        if (starvedPercentage < 40) {
+            newResidents = (int) Math.round(random.nextDouble(0.0, 0.4) * initialPopulation);
+            population += newResidents;
+        }
+
+        //step3 harvest
+        double harvestRate = random.nextDouble(0.1, 1) * HARVEST_FACTOR;
+        int bushelsHarvested = (int) Math.round(harvestRate * currentUsedAcreCount);
+        bushelCount += bushelsHarvested;
+
+        //step4 rat stuff
+        int ateByRats = (int) Math.round(random.nextDouble(0, MAX_RAT_EAT) * initialBushelCount);
+        bushelCount -= ateByRats;
+
+        //step1 add to year
+        age++;
+
+        TurnResult tr = new TurnResult(name, age, newResidents, bushelsHarvested, population, bushelCount, starvedCount, acreCount, ateByRats, starvedPercentage);
+        System.out.println(tr);
+        return tr;
     }
 
     public String toString() {
@@ -107,6 +149,8 @@ public class City {
         setAcreCount(1000);
         setPopulation(100);
         
+
+        random = new Random();
         age = 0;
         currentBushelSpendingOnFood = 0;
         currentUsedAcreCount = 0;

@@ -51,12 +51,19 @@ public class Codeopolis {
                 textInterface.showStatus(city);
     
                 //check if win conds apply
-                //TODO implement
+                if (turnResult.getYear() == 10) {
+                    gameWon = true;
+                    break;
+                }
+
                 //check if lose conds apply
-                //TODO implement
-            } 
-            // TODO uncomment when loop exit conds are implemented
-            // textInterface.close(); //close the scanner inside
+                if (turnResult.getStarvedPercentage() > 50 || turnResult.getResidents() == 0) {
+                    gameWon = false;
+                    break;
+                }
             }
+            System.out.println("Game won? ---> " + gameWon);
+        }
+        textInterface.close(); //close the scanner inside
     }
 }
