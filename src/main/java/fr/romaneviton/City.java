@@ -1,5 +1,7 @@
 package fr.romaneviton;
 
+import dev.codeopolis.increment03.TurnResult;
+
 public class City {
     private String name;
     private int bushelCount;
