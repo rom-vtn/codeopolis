@@ -134,7 +134,6 @@ public class City {
         age++;
 
         TurnResult tr = new TurnResult(name, age, newResidents, bushelsHarvested, population, bushelCount, starvedCount, acreCount, ateByRats, starvedPercentage);
-        System.out.println(tr);
         return tr;
     }
 
