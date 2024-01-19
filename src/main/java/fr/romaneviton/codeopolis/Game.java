@@ -29,7 +29,7 @@ public class Game {
             parent.showStatus(city);
 
             //check if win conds apply
-            if (turnResult.getYear() == 10) {
+            if (turnResult.getYear() == gameConfig.getNumberOfYears()) {
                 gameWon = true;
                 break;
             }

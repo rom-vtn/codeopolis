@@ -90,7 +90,7 @@ public class City {
     }
 
     public boolean plant(int acreCount) {
-        if (acreCount < 0 || this.acreCount < acreCount || this.bushelCount < acreCount || this.population * 10 < acreCount) {return false;}
+        if (acreCount < 0 || this.acreCount < acreCount || this.bushelCount * gameConfig.getBushelsPerAcre() < acreCount || this.population * gameConfig.getAcrePerResident() < acreCount) {return false;}
         this.bushelCount -= acreCount;
         currentUsedAcreCount = acreCount; 
         return true;
@@ -142,9 +142,9 @@ public class City {
 
     public City(String name, GameConfig gameConfig) {
         setName(name);
-        setBushelCount(2800);
-        setAcreCount(1000);
-        setPopulation(100);
+        setBushelCount(gameConfig.getInitialBushels());
+        setAcreCount(gameConfig.getInitialAcres());
+        setPopulation(gameConfig.getInitialResidents());
         
         this.gameConfig = gameConfig;
         random = new Random();
