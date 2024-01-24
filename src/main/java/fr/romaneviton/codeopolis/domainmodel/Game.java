@@ -2,13 +2,8 @@ package fr.romaneviton.codeopolis.domainmodel;
 
 import java.util.Random;
 
-import dev.codeopolis.increment03.TurnResult;
-//import fr.romaneviton.codeopolis.domainmodel.GameConfig;
-import fr.romaneviton.codeopolis.presentation.TextInterface;
-//import fr.romaneviton.codeopolis.domainmodel.DifficultyLevel;
-
 public class Game {
-    private TextInterface parent;
+    private UserInterface parent;
     private City city;
     private GameConfig gameConfig;
     private Random random;
@@ -46,7 +41,7 @@ public class Game {
         System.out.println("Game won? ---> " + gameWon);
     }
 
-    public Game(TextInterface parent) {
+    public Game(UserInterface parent) {
         this.parent = parent;
         gameConfig = new GameConfig(parent.askDifficultyLevel());
         city = new City(parent.askCityName("What's that name of your city? "), gameConfig);

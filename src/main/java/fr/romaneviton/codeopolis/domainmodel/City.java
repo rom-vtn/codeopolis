@@ -2,8 +2,6 @@ package fr.romaneviton.codeopolis.domainmodel;
 
 import java.util.Random;
 
-import dev.codeopolis.increment03.TurnResult;
-
 public class City {
     private String name;
     private int bushelCount;

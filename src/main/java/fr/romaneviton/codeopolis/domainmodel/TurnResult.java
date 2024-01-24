@@ -1,4 +1,4 @@
-package dev.codeopolis.increment03;
+package fr.romaneviton.codeopolis.domainmodel;
 
 import java.util.Objects;
 
