@@ -1,8 +1,11 @@
-package fr.romaneviton.codeopolis;
+package fr.romaneviton.codeopolis.domainmodel;
 
 import java.util.Random;
 
 import dev.codeopolis.increment03.TurnResult;
+//import fr.romaneviton.codeopolis.domainmodel.GameConfig;
+import fr.romaneviton.codeopolis.presentation.TextInterface;
+//import fr.romaneviton.codeopolis.domainmodel.DifficultyLevel;
 
 public class Game {
     private TextInterface parent;

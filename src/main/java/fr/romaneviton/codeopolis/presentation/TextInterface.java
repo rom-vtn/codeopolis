@@ -1,5 +1,9 @@
-package fr.romaneviton.codeopolis;
+package fr.romaneviton.codeopolis.presentation;
+import fr.romaneviton.codeopolis.domainmodel.DifficultyLevel;
 import java.util.Scanner;
+
+//import fr.romaneviton.codeopolis.DifficultyLevel;
+import fr.romaneviton.codeopolis.domainmodel.City;
 
 public class TextInterface {
     private Scanner scanner;

@@ -1,4 +1,5 @@
-import fr.romaneviton.codeopolis.*;
+import fr.romaneviton.codeopolis.domainmodel.*;
+//import fr.romaneviton.codeopolis.presentation.*;
 
 public class CityTestDrive {
     public static void main(String[] args) {

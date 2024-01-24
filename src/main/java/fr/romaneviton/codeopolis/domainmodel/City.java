@@ -1,4 +1,4 @@
-package fr.romaneviton.codeopolis;
+package fr.romaneviton.codeopolis.domainmodel;
 
 import java.util.Random;
 

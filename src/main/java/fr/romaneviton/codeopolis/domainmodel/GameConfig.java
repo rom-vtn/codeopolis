@@ -1,4 +1,4 @@
-package fr.romaneviton.codeopolis;
+package fr.romaneviton.codeopolis.domainmodel;
 
 public class GameConfig {
     // Initial number of residents:
