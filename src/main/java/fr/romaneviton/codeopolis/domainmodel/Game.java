@@ -52,7 +52,7 @@ public class Game {
             
             //userInterface.plantMenu(city);
             while (true) {
-                inputValue = userInterface.plant(gameConfig.getBushelsPerAcre(), gameConfig.getBushelsPerResident(), city);
+                inputValue = userInterface.plant(gameConfig.getBushelsPerAcre(), gameConfig.getAcrePerResident(), city);
                 if (city.plant(inputValue)) {
                     break;
                 } else {
